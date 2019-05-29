@@ -16,4 +16,14 @@ RSpec.configure do |config|
           ]
         }', headers: {})
     end
+    config.before(:each) do   
+      stub_request(:get, /blockchain.info/)
+        .with(
+          headers: {
+            'Accept'=>'*/*',
+            'Accept-Encoding'=>'gzip, deflate',
+            'Host'=>'blockchain.info',
+            'User-Agent'=>'rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57'
+          }).to_return(status: 200, body: "0.06358992", headers: {})
+    end
 end
