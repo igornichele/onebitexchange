@@ -10,6 +10,7 @@ gem 'webmock'
 
 gem 'ruby-debug-ide', '~> 0.6.0'
 gem 'debase'
+gem 'debase-ruby_core_source'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
