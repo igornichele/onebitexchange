@@ -1,11 +1,11 @@
 # README
 
 Exercise from OneBitCode Bootcamp
-Link to app: onebitexchangeigor.herokuapp.com
+* Link to app: onebitexchangeigor.herokuapp.com
 
-- Create an app to convert currencies
+Create an app to convert currencies
 
-Topics studied in this project:
+* Topics studied in this project:
     * Docker
     * Codeship (Continuous Integration, Deployment & Delivery)
     * Heroku
