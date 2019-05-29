@@ -23,7 +23,7 @@ class BitcoinService
         else
             url = "#{bit_api_url}frombtc?currency=#{@target_currency}&value=#{@amount.to_f.round(0)}"
         end
-        byebug
+
         res = RestClient.get url
         value = JSON.parse(res.body).to_f
     rescue RestClient::ExceptionWithResponse => e
