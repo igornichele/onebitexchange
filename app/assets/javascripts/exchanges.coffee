@@ -1,4 +1,17 @@
 $(document).ready ->
+  $('#source_currency').change ->
+    $('#exchange_form').submit()
+
+  $('#target_currency').change ->
+    $('#exchange_form').submit()
+
+  timeout = null
+  $('#amount').keyup ->
+    clearTimeout(timeout)
+    timeout = setTimeout((->
+      $('#exchange_form').submit()
+      return
+    ), 500)
  
   $('form').submit ->
     if $('form').attr('action') == '/convert'
@@ -15,3 +28,10 @@ $(document).ready ->
           success: (data, text, jqXHR) ->
             $('#result').val(data.value)
         return false;
+
+  $('#inverter').click ->
+    source = $("#source_currency").val()
+    $("#source_currency").val($("#target_currency").val())
+    $("#target_currency").val(source)
+    $('#exchange_form').submit() if $('#amount').val()
+    return false;
